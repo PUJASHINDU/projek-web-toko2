@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIKA UDENG BALI</title>
+    <link rel="stylesheet" href="styel.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <title>210010064</title>
+        <script>
+            function fileValidation() {
+                var fileInput = document.getElementById('foto');
+                var filePath = fileInput.value;
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+                if(!allowedExtensions.exec(filePath)){
+                    alert('Silakan upload file dengan tipe .jpeg/.jpg/.png/.gif');
+                    fileInput.value = '';
+                    return false;
+                } else {
+                    if (fileInput.files && fileInput.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            document.getElementById('upload_foto').src = e.target.result;
+                        };
+                        reader.readAsDataURL(fileInput.files[0]);
+                    }
+                }
+            } 
+        </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: rgb(129, 129, 129)">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">BACK TO HOME</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br>
+        <div class="Judul">
+        <h4 class="text-center">FORMULIR PENDAFTARAN STAF</h4></div>
+        <br>
+        <form action="" method="get">
+            <div class="mb-3 row">
+                <label for="nama_mhs" class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nama_mhs" name="nama_mhs" required
+                        placeholder="Masukan nama lengkap">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="email_mhs" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email_mhs" name="email_mhs" required
+                        placeholder="Masukan email lengkap anda">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="tgl_lahir" class="col-sm-2 col-form-label">Tanggal lahir</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" required placeholder="">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="prodi" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                <div class="col-sm-10">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jenis_klmin" id="laki" value="L">
+                        <label class="form-check-label" for="laki">laki-laki</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="jenis_klmin" id="Perempuan" value="P">
+                        <label class="form-check-label" for="Perempuan">Perempuan</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here"
+                            id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-2 row">
+                <label for="alamat" class="col-sm-2 col-form-label" >Poto</label>
+                <div class="col-sm-2">
+                    <img src="Gambar/Photoo.png" id="upload_foto" alt="" width="100px">
+                    <input type="file" name="foto" id="foto"  required class="from input" onchange="fileValidation()">
+                </div>
+            </div>
+            
+            <div class="mb-3 row">
+                <label for="" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container2">
+        <div id="footer">
+          <footer>
+            &copy; copyringht 2022
+          </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+        </script>
+</body>
